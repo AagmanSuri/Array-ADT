@@ -146,6 +146,15 @@ int sum(struct Array arr)
     return total;
 }
 //avg
+int avg(struct Array arr)
+{
+    int total=0;
+    for(int i=0;i<arr.length;i++)
+    {
+        total=total+arr.A[i];
+    }
+    return total/arr.length;
+}
 int main()
 {
     struct Array arr={{2,3,4,5,6},20,5};
@@ -159,7 +168,8 @@ int main()
     //printf("%d",set(&arr,3,1));
     //printf("%d",max(arr));
     //printf("%d",min(arr));
-    printf("%d",sum(arr));
+    //printf("%d",sum(arr));
+    printf("%d",avg(arr));
     Display(arr);
     
     return 0;
