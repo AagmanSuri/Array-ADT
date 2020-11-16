@@ -78,7 +78,8 @@ int LinearSearch(struct Array *arr,int key)
 int BinarySearch(struct Array arr,int key)
 {
 int l=0, h=arr.length-1;
-int mid=(l+h)/2;
+    while(l<h){
+    int mid=(l+h)/2;
     if(arr.A[mid]==key)
     {
         return mid;
@@ -91,8 +92,39 @@ int mid=(l+h)/2;
     {
         l=mid+1;
     }
+    
+    }
     return -1;
 }
+//get(index)
+int get(struct Array arr,int index)
+{   if(index>0 && index<arr.length)
+        return arr.A[index];
+    return -1;
+}
+
+//set(index,x)
+int set(struct Array *arr,int index,int x)
+{   if(index>0 && index<arr->length)
+     return arr->A[index]=x;
+    return -1;
+}
+//max
+int max(struct Array arr)
+{
+    int max=arr.A[0];
+    for(int i=1;i<arr.length;i++)
+    {
+        if(arr.A[i]>max)
+        {
+            max=arr.A[i];
+        }
+    }
+    return max;
+}
+//min
+//sum
+//avg
 int main()
 {
     struct Array arr={{2,3,4,5,6},20,5};
@@ -101,7 +133,10 @@ int main()
     //Insert(&arr,0,1);
     //Delete(&arr,2);
     //printf("%d",LinearSearch(&arr, 4));
-    printf("%d",BinarySearch(arr,4));
+    //printf("%d",BinarySearch(arr,4));
+    //printf("%d",get(arr, 3));
+    //printf("%d",set(&arr,3,1));
+    //printf("%d",max(arr));
     Display(arr);
     
     return 0;
