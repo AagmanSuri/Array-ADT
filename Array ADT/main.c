@@ -26,6 +26,19 @@ void Append(struct Array *arr,int x)
     }
 }
 //insert(index,x)
+void Insert(struct Array *arr, int index,int x)
+{
+    if(arr->length<arr->size)
+    {
+    for(int i=arr->length;i>index;i--)
+    {
+        arr->A[i]=arr->A[i-1];
+    }
+        arr->A[index]=x;
+        arr->length++;
+        
+    }
+}
 //delete(index)
 //search
 //linear search
@@ -35,7 +48,8 @@ int main()
 {
     struct Array arr={{2,3,4,5,6},20,5};
     
-    Append(&arr, 7);
+    //Append(&arr, 7);
+    Insert(&arr,0,1);
     Display(arr);
     
     return 0;
