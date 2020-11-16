@@ -169,7 +169,7 @@ int main()
     //printf("%d",max(arr));
     //printf("%d",min(arr));
     //printf("%d",sum(arr));
-    printf("%d",avg(arr));
+    //printf("%d",avg(arr));
     Display(arr);
     
     return 0;
