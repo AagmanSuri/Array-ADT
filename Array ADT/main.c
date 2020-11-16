@@ -123,6 +123,18 @@ int max(struct Array arr)
     return max;
 }
 //min
+int min(struct Array arr)
+{
+    int min=arr.A[0];
+    for(int i=1;i<arr.length;i++)
+    {
+        if(arr.A[i]<min)
+        {
+            min=arr.A[i];
+        }
+    }
+    return min;
+}
 //sum
 //avg
 int main()
@@ -137,6 +149,7 @@ int main()
     //printf("%d",get(arr, 3));
     //printf("%d",set(&arr,3,1));
     //printf("%d",max(arr));
+    //printf("%d",min(arr));
     Display(arr);
     
     return 0;
