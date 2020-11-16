@@ -2,36 +2,26 @@
 #include <stdlib.h>
 struct Array
 {
-    int *A;
+    int A[20];
     int size;
     int length ;
 };
 
-int Display(struct Array t)
+void Display(struct Array arr)
 {
-    for(int i =0;i<t.length;i++)
+    int i;
+    printf("\n Elements are\n");
+    for(i=0;i<arr.length;i++)
     {
-        printf("%d",t.A[i]);
+        printf("%d ",arr.A[i]);
     }
-    return 0;
 }
 int main()
-{   int n,i ;
-    struct Array arr;
-    printf("Enter the size of an array");
-    scanf("%d",&arr.size);
-    arr.A= (int *) malloc(arr.size*sizeof(int));
-    arr.length =0;
-    
-    printf("enter the number of number : ");
-    scanf("%d",&n);
-    for(i=0;i<n;i++)
-    {
-        scanf("%d",&arr.A[i]);
-    }
-    arr.length=n;
+{
+    struct Array arr={{2,3,4,5,6},20,5};
     
     Display(arr);
+    
     return 0;
 }
 
