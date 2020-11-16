@@ -40,6 +40,18 @@ void Insert(struct Array *arr, int index,int x)
     }
 }
 //delete(index)
+void Delete(struct Array *arr,int index)
+{
+    if(index>=0 && index<arr->length)
+    {
+    for(int i=index;i<arr->length-1;i++)
+    {
+        arr->A[i]=arr->A[i+1];
+    }
+    arr->length--;
+    }
+}
+
 //search
 //linear search
 //Binary search
@@ -49,7 +61,8 @@ int main()
     struct Array arr={{2,3,4,5,6},20,5};
     
     //Append(&arr, 7);
-    Insert(&arr,0,1);
+    //Insert(&arr,0,1);
+    Delete(&arr,2);
     Display(arr);
     
     return 0;
