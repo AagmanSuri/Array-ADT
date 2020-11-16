@@ -75,7 +75,24 @@ int LinearSearch(struct Array *arr,int key)
     return -1;
 }
 //Binary search
-
+int BinarySearch(struct Array arr,int key)
+{
+int l=0, h=arr.length-1;
+int mid=(l+h)/2;
+    if(arr.A[mid]==key)
+    {
+        return mid;
+    }
+    else if(arr.A[mid]>key)
+    {
+        h=mid-1;
+    }
+    else if(arr.A[mid]<key)
+    {
+        l=mid+1;
+    }
+    return -1;
+}
 int main()
 {
     struct Array arr={{2,3,4,5,6},20,5};
@@ -83,7 +100,8 @@ int main()
     //Append(&arr, 7);
     //Insert(&arr,0,1);
     //Delete(&arr,2);
-    printf("%d",LinearSearch(&arr, 4));
+    //printf("%d",LinearSearch(&arr, 4));
+    printf("%d",BinarySearch(arr,4));
     Display(arr);
     
     return 0;
