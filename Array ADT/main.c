@@ -54,6 +54,18 @@ void Delete(struct Array *arr,int index)
 
 //search
 //linear search
+int LinearSearch(struct Array *arr,int key)
+{
+    for(int i=0;i<arr->length;i++)
+    {
+        if(arr->A[i]==key)
+        {
+            return i;
+        }
+        
+    }
+    return -1;
+}
 //Binary search
 
 int main()
@@ -62,7 +74,8 @@ int main()
     
     //Append(&arr, 7);
     //Insert(&arr,0,1);
-    Delete(&arr,2);
+    //Delete(&arr,2);
+    printf("%d",LinearSearch(&arr, 4));
     Display(arr);
     
     return 0;
