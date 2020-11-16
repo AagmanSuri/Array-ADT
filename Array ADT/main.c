@@ -1,4 +1,3 @@
-//this is the check 
 #include <stdio.h>
 #include <stdlib.h>
 struct Array
