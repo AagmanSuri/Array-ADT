@@ -202,7 +202,19 @@ void LeftRotate(struct Array *arr)
 }
 //right shift
 //right rotate
-
+//Inserting at the sorted place
+void InsertSort(struct Array *arr,int x)
+{   int i= arr->length-1;
+    if(arr->length==arr->size)
+        return;
+    while(i>=0 && x<arr->A[i])
+    {
+        arr->A[i+1]=arr->A[i];
+        i--;
+    }
+    arr->A[i+1]=x;
+    arr->length++;
+}
 
 int main()
 {
@@ -222,7 +234,8 @@ int main()
     //Reverse(&arr);
     //Reverse2(&arr);
     //LeftShift(&arr);
-    LeftRotate(&arr);
+    //LeftRotate(&arr);
+    InsertSort(&arr,1);
     Display(arr);
     
     return 0;
