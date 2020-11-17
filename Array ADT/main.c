@@ -155,6 +155,13 @@ float avg(struct Array arr)
     }
     return (float)total/arr.length;
 }
+//reverse
+//left shift
+//left rotate
+//right shift
+//right rotate
+
+
 int main()
 {
     struct Array arr={{2,3,4,5,6},20,5};
