@@ -155,7 +155,7 @@ float avg(struct Array arr)
     }
     return (float)total/arr.length;
 }
-//reverse
+//reverse with creating an auxilary array
 void Reverse(struct Array *arr)
 {
     int *B;
@@ -170,6 +170,16 @@ void Reverse(struct Array *arr)
     arr->A[i]=B[i];
     }
     
+}
+
+void Reverse2(struct Array *arr)
+{   int i,j;
+    for(i=0,j=arr->length-1;i<j;i++,j--)
+    {
+    
+        swap(&arr->A[i], &arr->A[j]);
+
+    }
 }
 //left shift
 //left rotate
@@ -192,7 +202,8 @@ int main()
     //printf("%d",min(arr));
     //printf("%d",sum(arr));
     //printf("%f",avg(arr));
-    Reverse(&arr);
+    //Reverse(&arr);
+    Reverse2(&arr);
     Display(arr);
     
     return 0;
