@@ -215,6 +215,16 @@ void InsertSort(struct Array *arr,int x)
     arr->A[i+1]=x;
     arr->length++;
 }
+int isSorted(struct Array arr)
+{
+    int i ;
+    for(i=0;i<arr.length-1;i++)
+    {
+        if(arr.A[i]>arr.A[i+1])
+            return 0;
+    }
+    return 1;
+}
 
 int main()
 {
@@ -235,7 +245,8 @@ int main()
     //Reverse2(&arr);
     //LeftShift(&arr);
     //LeftRotate(&arr);
-    InsertSort(&arr,1);
+    //InsertSort(&arr,1);
+    printf("%d",isSorted(arr));
     Display(arr);
     
     return 0;
