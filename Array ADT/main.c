@@ -182,6 +182,14 @@ void Reverse2(struct Array *arr)
     }
 }
 //left shift
+void LeftShift(struct Array *arr)
+{
+    int i;
+    for(i=0;i<arr->length;i++)
+    {
+        arr->A[i]=arr->A[i+1];
+    }
+}
 //left rotate
 //right shift
 //right rotate
@@ -203,7 +211,8 @@ int main()
     //printf("%d",sum(arr));
     //printf("%f",avg(arr));
     //Reverse(&arr);
-    Reverse2(&arr);
+    //Reverse2(&arr);
+    LeftShift(&arr);
     Display(arr);
     
     return 0;
