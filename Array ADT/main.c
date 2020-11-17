@@ -191,6 +191,15 @@ void LeftShift(struct Array *arr)
     }
 }
 //left rotate
+void LeftRotate(struct Array *arr)
+{
+    int i;
+    arr->A[arr->length]=arr->A[0];
+    for(i=0;i<arr->length;i++)
+    {
+        arr->A[i]=arr->A[i+1];
+    }
+}
 //right shift
 //right rotate
 
