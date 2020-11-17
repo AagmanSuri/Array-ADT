@@ -221,19 +221,9 @@ int main()
     //printf("%f",avg(arr));
     //Reverse(&arr);
     //Reverse2(&arr);
-    LeftShift(&arr);
+    //LeftShift(&arr);
+    LeftRotate(&arr);
     Display(arr);
     
     return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
