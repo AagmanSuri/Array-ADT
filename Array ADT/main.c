@@ -156,6 +156,21 @@ float avg(struct Array arr)
     return (float)total/arr.length;
 }
 //reverse
+void Reverse(struct Array *arr)
+{
+    int *B;
+    B=(int *)malloc(arr->length*sizeof(int));
+    int i,j;
+    for(i=arr->length-1,j=0;i>=0;i--,j++)
+    {
+        B[j]=arr->A[i];
+    }
+    for(i=0;i<arr->length;i++)
+    {
+    arr->A[i]=B[i];
+    }
+    
+}
 //left shift
 //left rotate
 //right shift
@@ -177,6 +192,7 @@ int main()
     //printf("%d",min(arr));
     //printf("%d",sum(arr));
     //printf("%f",avg(arr));
+    Reverse(&arr);
     Display(arr);
     
     return 0;
