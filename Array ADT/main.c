@@ -2,9 +2,11 @@
 #include <stdlib.h>
 struct Array
 {
-    int A[10];
+    //int A[10];
+    //for menu drven
+    int *A;
     int size;
-    int length ;
+    int length;
 };
 
 void Display(struct Array arr)
@@ -367,9 +369,9 @@ struct Array * Difference(struct Array *arr1 ,struct Array *arr2)
 int main()
 {
     //struct Array arr={{-2,3,-4,5,6},10,5};
-    struct Array arr1={{2,6,10,15,25},10,5};
-    struct Array arr2={{3,6,7,15,20},10,5};
-    struct Array *arr3;
+    //struct Array arr1={{2,6,10,15,25},10,5};
+//    struct Array arr2={{3,6,7,15,20},10,5};
+//    struct Array *arr3;
     
     //Append(&arr, 7);
     //Insert(&arr,0,1);
@@ -392,8 +394,54 @@ int main()
     //arr3= Merging(&arr1, &arr2);
     //arr3= Union(&arr1, &arr2);
     //arr3= Intersection(&arr1, &arr2);
-    arr3= Difference(&arr1, &arr2);
-    Display(*arr3);
+    //arr3= Difference(&arr1, &arr2);
+    //Display(*arr3);
+        
+    
+        // For menu Driven Code
+    
+    struct Array arr1;
+    int ch;
+    int x , index;
+    printf("Enter the size of an array");
+    scanf("%d",&arr1.size);
+    arr1.A=(int *)malloc(arr1.size*sizeof(int));
+    do{
+    printf("Menu\n");
+    printf("1. Insert\n");
+    printf("2. Delete\n");
+    printf("3. Search\n");
+    printf("4. Sum\n");
+    printf("5. Display\n");
+    printf("6. Exit\n");
+    
+    printf("Enter your choice ");
+    scanf("%d",&ch);
+    switch (ch)
+    {
+        case 1: printf(" Enter an element and index ");
+            scanf("%d%d",&x,&index);
+            Insert(&arr1,index,x);
+            break;
+            
+        case 2:printf(" Enter the index ");
+            scanf("%d",&index);
+            Delete(&arr1, index);
+        
+        case 3:printf("Enter elements to search");
+            scanf("%d",&x);
+            index=LinearSearch(&arr1, x);
+            printf("Elements index is %d",index);
+            break;
+        
+        case 4:printf("Sum is %d\n",sum(arr1));
+            break;
+        
+        case 5:Display(arr1);
+            
+            
+    }
+    }while (ch<6);
     
     return 0;
 }
