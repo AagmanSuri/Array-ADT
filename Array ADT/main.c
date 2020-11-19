@@ -274,12 +274,44 @@ struct Array * Merging(struct Array *arr1 ,struct Array *arr2)
     arr3->size=10;
     return arr3;
 }
-
+struct Array * Union(struct Array *arr1 ,struct Array *arr2)
+{   int i,j,k;
+    i=j=k=0;
+    struct Array *arr3=(struct Array *)malloc(sizeof(struct Array));
+    while(i<arr1->length && j<arr2->length)
+    {   //one smaller
+        if(arr1->A[i]<arr2->A[j])
+        {
+            arr3->A[k++]= arr1->A[i++];
+        }
+        else if(arr2->A[j]<arr1->A[i])
+        {
+            arr3->A[k++]=arr2->A[j++];
+        }
+        // if both are equal copy anyone and increment the other
+        else
+        {
+            arr3->A[k++]=arr1->A[i++];
+            j++;
+        }
+    }
+    for(;i<arr1->length;i++)
+    {
+        arr3->A[k++]=arr1->A[i++];
+    }
+    for(;j<arr2->length;j++)
+    {
+        arr3->A[k++]=arr2->A[j++];
+    }
+    arr3->length =k;
+    arr3->size=10;
+    return arr3;
+}
 int main()
 {
-    struct Array arr={{-2,3,-4,5,6},10,5};
-    struct Array arr1={{1,2,3,4,5},10,5};
-    struct Array arr2={{6,7,8,9,10},10,5};
+    //struct Array arr={{-2,3,-4,5,6},10,5};
+    struct Array arr1={{2,6,10,15,25},10,5};
+    struct Array arr2={{3,6,7,15,20},10,5};
     struct Array *arr3;
     
     //Append(&arr, 7);
@@ -300,7 +332,8 @@ int main()
     //InsertSort(&arr,1);
     //printf("%d",isSorted(arr));
     //Rearrange(&arr);
-    arr3= Merging(&arr1, &arr2);
+    //arr3= Merging(&arr1, &arr2);
+    arr3= Union(&arr1, &arr2);
     Display(*arr3);
     
     return 0;
